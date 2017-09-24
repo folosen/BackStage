@@ -909,6 +909,7 @@
   content: "\f104";
 }
 .fa-angle-right:before {
+  margin-left:10px;
   content: "\f105";
 }
 .fa-angle-up:before {

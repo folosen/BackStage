@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/reset.min.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.css">    
     <link rel="stylesheet" href="css/mainTenance.css">
     <title>mainTenance</title>
 </head>
@@ -120,14 +120,62 @@
                         <li class="divider"></li>
                         <li><a href="#">转本公司银行账户</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">转其他嗨生活账户</a></li>
-                        
+                        <li><a href="#">转其他公司嗨生活账户</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">转其他公司银行账户</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">转个人银行卡</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">转个人嗨生活账户</a></li>
                     </ul>
                 </li>
-                <li><a href="#">PHP</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        对账管理 <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">对账管理</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">差错管理</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">权限管理</a></li>
             </ul>
         </div>
     </header>
+    <div id="price-box">
+        <div class="price-nav">
+            <ol class="breadcrumb price-left">
+                <li class="active">价格维护<i class="fa fa-angle-right"></i></li>
+                <li class="def-color">房间价格维护</li>
+            </ol>
+            <ol class="breadcrumb price-right">
+                <li class="def-color">价格维护</li>
+                <li class="active">价格规则限定</li>
+            </ol>
+        </div>
+        <div class="price-sel">
+            <form class="form-horizontal" role="form">
+                <div class="sel-text" >
+                    <label for="priceName">价格名称</label>
+                    <input type="text" class="form-control" id="priceName" placeholder="请输入价格名称">
+                </div>
+                <div class="sel-text">
+                    <label for="hotName">酒店名称</label>
+                    <input type="text" class="form-control" id="hotName" placeholder="请输入酒店名称">
+                </div>
+                <div class="sel-text">
+                    <label for="sel-status">状态</label>
+                    <select id="sel-status" class="form-control">
+                        <option>全部</option>
+                        <option>已上架</option>
+                        <option>已下架</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-default def-color sel-btn">查询</button>
+            </form>
+        </div>
+    </div>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </body>

@@ -2546,12 +2546,13 @@ output {
   color: #555;
 }
 .form-control {
-  display: block;
-  width: 100%;
-  height: 34px;
-  padding: 6px 12px;
+  display: inline-block;
+  width: 138px;
+  height: 30px;
+  padding: 4px 4px;
   font-size: 14px;
   line-height: 1.42857143;
+  margin-left:10px;
   color: #555;
   background-color: #fff;
   background-image: none;
@@ -3001,7 +3002,7 @@ select[multiple].input-lg {
 }
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 7px 17px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: normal;
@@ -3982,7 +3983,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 14px 15px;
+  padding: 12px 9px;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -4697,12 +4698,13 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   border-radius: 4px;
 }
 .breadcrumb > li {
+  margin-left:10px;
   display: inline-block;
 }
 .breadcrumb > li + li:before {
-  padding: 0 5px;
+  /* padding: 0 5px;
   color: #ccc;
-  content: "/\00a0";
+  content: "/\00a0"; */
 }
 .breadcrumb > .active {
   color: #777;
