@@ -15,6 +15,12 @@ header{
     color:#4ba5b3;
     border-color: #4ba5b3;
 }
+.def-link{
+    color:#4ba5b3;
+    border: 0px;
+    height:14px;
+    line-height: 14px;
+}
 .hand-nav{
     width:1010px;
     height:98px;
@@ -110,4 +116,39 @@ a{
 }
 label{
     font-weight: normal;
+}
+#price-box .sel-table table{
+    width: 1120px;
+    height: auto;
+    margin: 20px auto ;
+}
+.table-striped > tbody > tr > td:nth-of-type(4),.table-striped > tbody > tr > td:nth-of-type(5){
+    color:#c59a3f;
+    font-weight: bold;
+}
+.table-footer{
+    width:1120px;
+    height:45px;
+    margin: auto;
+    text-align: right;
+    margin-top:15px;
+}
+.table-footer span{
+    padding:4px 6px;
+    margin-left:9px;
+    font-size: 14px;
+}
+.table-footer .sel-now{
+    background-color: #f0f0f0;
+}
+.table-footer .btn-link{
+    color:black;
+    cursor: pointer;
+}
+.table-footer button{
+    background-color: #fff;
+    padding:5px 10px;
+    border:1px solid #dddddd;
+    font-size:14px;
+    line-height: 14px;
 }

@@ -2263,21 +2263,29 @@ th {
   width: 100%;
   max-width: 100%;
   margin-bottom: 20px;
+  border: 1px solid #dddddd;
 }
-.table > thead > tr > th,
 .table > tbody > tr > th,
 .table > tfoot > tr > th,
-.table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-  padding: 8px;
-  line-height: 1.42857143;
+  padding: 0px;
+  line-height: 54px;
   vertical-align: top;
+  height:54px;
+  font-size:14px;
+  text-align: center;
   border-top: 1px solid #ddd;
 }
 .table > thead > tr > th {
   vertical-align: bottom;
-  border-bottom: 2px solid #ddd;
+  background-color: #f0f0f0;
+  font-size:15px;
+  line-height: 43px;
+  font-weight: bold;
+  text-align: center;
+  height:43px;
+  border-bottom: 1px solid #ddd;
 }
 .table > caption + thead > tr:first-child > th,
 .table > colgroup + thead > tr:first-child > th,
@@ -2316,8 +2324,8 @@ th {
 .table-bordered > thead > tr > td {
   border-bottom-width: 2px;
 }
-.table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: #f9f9f9;
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #f0f0f0;
 }
 .table-hover > tbody > tr:hover {
   background-color: #f5f5f5;
