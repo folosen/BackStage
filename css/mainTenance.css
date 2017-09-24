@@ -126,6 +126,10 @@ label{
     color:#c59a3f;
     font-weight: bold;
 }
+.table-striped > tbody > tr > td span{
+    margin: auto 7px;
+    cursor:pointer;
+}
 .table-footer{
     width:1120px;
     height:45px;
