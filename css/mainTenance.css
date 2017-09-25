@@ -12,11 +12,11 @@ header{
     background-image: url(../img/hicon.png);
 }
 .def-color{
-    color:#4ba5b3;
-    border-color: #4ba5b3;
+    color:#4fb7c7;
+    border-color: #4fb7c7;
 }
 .def-link{
-    color:#4ba5b3;
+    color:#4fb7c7;
     border: 0px;
     height:14px;
     line-height: 14px;
@@ -36,7 +36,7 @@ header{
     padding:5px 15px;
     border:0px;
     font-size:14px;
-    color:#4ba5b3;
+    color:#4fb7c7;
     float:right;
     margin-top:9.5px;
 }
@@ -163,7 +163,7 @@ label{
     width:100%;
     height:100%;
     box-sizing: content-box;
-    z-index: 999999;
+    z-index: 99999;
     background-color: #000;
     opacity: 0.5;
     background: -moz-radial-gradient(center,ellipse cover,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
@@ -180,4 +180,123 @@ label{
     -ms-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
+}
+.price-setbox .date-box{
+    position: fixed;
+    top:50%;
+    left:50%;
+    margin-top:-270px;
+    margin-left:-365px;
+    width:730px;
+    height:540px;
+    z-index: 999999;
+    background-color: #fff;
+    border-radius: 5px 5px 0 0;
+}
+.price-setbox .date-box h4{
+    border-radius: 5px 5px 0 0;
+    background-color: #4fb7c7;
+    height:42px;
+    line-height: 42px;
+    font-size: 15px;
+    color:#fff;
+    padding-left:16px;
+    margin: 0px;
+}
+.price-setbox .date-box h4 i{
+    float:right;
+    margin-top:13px;
+    margin-right:12px;
+    font-size: 18px;
+    cursor: pointer;
+}
+#calendar{
+    width: 700px;
+    height:360px;
+    display: inline-block;
+    height: auto;
+    margin: auto;
+}
+#calendar table{
+    margin: 0px;
+    border-collapse: collapse;
+   /*列宽由表格宽度和列宽度设定*/
+    table-layout: fixed;
+}
+#calendar caption{
+    height:69px;
+    background-color: #fff;
+    color:black;
+    text-align: center;
+    
+    padding:0px;
+    padding-top:33px;
+    font-size:16px;
+    font-weight: bold;
+    position: relative;
+}
+#calendar caption i{
+    margin-left:7.5px;
+    margin-right:7.5px;
+    color:#4fb7c7;
+    font-weight: normal;
+}
+#calendar caption .rest-btn{
+    position:absolute;
+    right:0px;
+    top:0px;
+    height:30px;
+    width:80px;
+    padding:0px;
+    background-color: #4fb7c7;
+    color:#fff;
+    line-height: 30px;
+    margin-top:27px;
+}
+.am-daymoney thead tr{
+    /* background-color: #f0f0f0; */
+}
+.am-daymoney thead tr > th{
+    color:#666666;
+    font-size: 13px;
+    text-align: center;
+}
+.am-daymoney thead tr{
+    height:34px;
+    line-height: 34px;
+    background-image: url(../img/thead.png); 
+}
+.am-daymoney tbody{
+    box-sizing:border-box;
+    width:359px;
+    border: 1px solid #ddd;
+    border-top:none;
+    border-right:none;
+}
+.am-table-bordered > tbody > tr> td:last-child{
+    border-right: 1px solid #ddd;
+}
+.am-table > tbody > tr > td{
+    height:60px;
+    text-align: center;
+    
+}
+.am-daymoney tbody > tr > td > span:first-child{
+    display: inline-block;
+    height:22px;
+    width:22px;
+    border-radius: 50%;
+    line-height: 22px;
+    text-align: center;
+    background-color: #4fb7c7;
+    color:#fff;
+}
+.am-daymoney tbody > tr > td > span{
+    height:30px;
+}
+.am-daymoney tbody > tr > td > .daymoney-month-body{
+    font-size:14px;
+    color:#666666;
+    display: block;
+    width:auto;
 }
