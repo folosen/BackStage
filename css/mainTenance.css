@@ -158,6 +158,7 @@ label{
 }
 .set-overlay{
     position: fixed;
+    display:none;
     top:0px;
     left:0px;
     width:100%;
@@ -190,6 +191,7 @@ label{
     width:730px;
     height:540px;
     z-index: 999999;
+    display:none;
     background-color: #fff;
     border-radius: 5px 5px 0 0;
 }
@@ -321,6 +323,8 @@ label{
 }
 .date-box .rest-price{
     position: absolute;
+    display:none;
+    z-index: 999999999;
     top:50%;
     left:50%;
     width:460px;
@@ -353,7 +357,7 @@ label{
     top: 1px;
     font-size: 20px;
     margin-left:-20px;
-    z-index: 99999999;
+    z-index: 9;
     color: #4fb7c7;
 }
 .table-condensed{
