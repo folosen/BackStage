@@ -342,6 +342,7 @@ label{
     margin-top:30px;
     position: relative;
     margin-right:10px;
+    font-size: 16px;
 }
 .date-box .control-group div input{
     height:30px;
