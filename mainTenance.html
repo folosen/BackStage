@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/reset.min.css">
     <link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="stylesheet" href="css/bootstrap.css">    
-    <link rel="stylesheet" href="css/mainTenance.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.css" media="screen">      
     <link rel="stylesheet" href="css/jquery.daymoney.css">
+    <link rel="stylesheet" href="css/mainTenance.css">
     <title>mainTenance</title>
 </head>
 <body>
@@ -301,7 +302,40 @@
             <div class="set-overlay"></div>
             <div class="date-box">
                 <h4>房间价格修改 <i class="fa fa-close"></i></h4>
-                <div class="am-daymoney" id="calendar"></div>
+                <table class="am-table am-table-bordered" style="margin: 0px;margin-left: 15px;">
+                    <caption><i class="am-daymoney-prev"><<上月</i><span class="am-daymoney-year"></span>年<span class="am-daymoney-month"></span>月<i class="am-daymoney-next">下月>></i><div class="btn btn-default rest-btn def-color">修改</div></caption><thead><tr><th>星期一</th><th>星期二</th><th>星期三</th><th>星期四</th><th>星期五</th><th class="red">星期六</th><th class="red">星期日</th></tr></thead>
+                </table>
+                <div class="tabel-body-box">
+                    <div class="am-daymoney" id="calendar"></div>
+                </div>
+                <div class="date-footer">
+                    <button class="btn btn-default def-color rest-ok">确认修改</button>
+                </div>
+                <div class="rest-price">
+                    <h4>修改价格<i class="fa fa-close"></i></h4>
+                    <form action="" class="form-horizontal"></form>
+                        <div class="control-group">
+                            <label class="control-label">价格时间区间</label>
+                            <div class="controls input-append date form_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                <input size="16" class="form-control" type="text" value="" readonly><span class="add-on"><i class="fa fa-calendar"></i></span></input>
+                                
+                            </div>
+                            <input type="hidden" id="dtp_input2" value="" />~
+                            <div class="controls input-append date form_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input1" data-link-format="yyyy-mm-dd">
+                                <input size="16" class="form-control" type="text" value="" readonly><span class="add-on"><i class="fa fa-calendar"></i></span></input>
+                                
+                            </div>
+                            <input type="hidden" id="dtp_input1" value="" /><br/>                            
+                        </div>
+                        <div class="control-rest">
+                            <label for="restPeric">设置价格</label>
+                            <input type="text" class="form-control" id="restPeric" placeholder="">元 
+                        </div>
+                        <div class="control-rest">
+                                <button class="btn btn-default def-color rest-ok">确定</button>
+                        </div>                       
+                    </form>
+                </div>                
             </div>
         </div>
     </div>    
@@ -323,6 +357,8 @@
     </footer>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
 <script src="js/jquery.daymoney.js"></script>
 <script src="js/mainTenance.js"></script>
 </body>

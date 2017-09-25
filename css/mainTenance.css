@@ -211,7 +211,7 @@ label{
     cursor: pointer;
 }
 #calendar{
-    width: 700px;
+    width: 680px;
     height:360px;
     display: inline-block;
     height: auto;
@@ -223,7 +223,7 @@ label{
    /*列宽由表格宽度和列宽度设定*/
     table-layout: fixed;
 }
-#calendar caption{
+.am-table caption{
     height:69px;
     background-color: #fff;
     color:black;
@@ -235,13 +235,13 @@ label{
     font-weight: bold;
     position: relative;
 }
-#calendar caption i{
+.am-table caption i{
     margin-left:7.5px;
     margin-right:7.5px;
     color:#4fb7c7;
     font-weight: normal;
 }
-#calendar caption .rest-btn{
+.am-table caption .rest-btn{
     position:absolute;
     right:0px;
     top:0px;
@@ -256,12 +256,13 @@ label{
 .am-daymoney thead tr{
     /* background-color: #f0f0f0; */
 }
-.am-daymoney thead tr > th{
+.am-table thead tr > th{
     color:#666666;
     font-size: 13px;
     text-align: center;
 }
-.am-daymoney thead tr{
+
+.am-table thead tr{
     height:34px;
     line-height: 34px;
     background-image: url(../img/thead.png); 
@@ -269,12 +270,9 @@ label{
 .am-daymoney tbody{
     box-sizing:border-box;
     width:359px;
-    border: 1px solid #ddd;
-    border-top:none;
-    border-right:none;
+    border-bottom: 1px solid #999999;
 }
 .am-table-bordered > tbody > tr> td:last-child{
-    border-right: 1px solid #ddd;
 }
 .am-table > tbody > tr > td{
     height:60px;
@@ -292,11 +290,88 @@ label{
     color:#fff;
 }
 .am-daymoney tbody > tr > td > span{
-    height:30px;
+    height:25px;
+    line-height: 25px;
 }
 .am-daymoney tbody > tr > td > .daymoney-month-body{
     font-size:14px;
     color:#666666;
     display: block;
     width:auto;
+}
+.am-table {
+    margin:0px;
+}
+.date-box .date-footer{
+    margin: auto;
+    margin-top:23px;
+    width: 700px;
+}
+.date-box .tabel-body-box{
+    margin: auto;
+    width: 700px;
+    border: 1px solid #ddd;
+    border-top:none;
+    padding-bottom: 16px;
+}
+.date-box .rest-ok{
+    float:right;
+    color:#fff;
+    background-color: #4fb7c7;
+}
+.date-box .rest-price{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width:460px;
+    height:220px;
+    margin-left:-230px;
+    margin-top:-110px;
+    background-color: #fff;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 2px 14px 1px #888888;
+}
+.date-box .control-group{
+    height:80px;
+    text-align: center;
+    width:100%;
+}
+.date-box .control-group div{
+    display:inline-block;
+    height:30px;
+    margin-top:30px;
+    position: relative;
+    margin-right:10px;
+}
+.date-box .control-group div input{
+    height:30px;
+}
+.date-box .control-group div span{
+    position: absolute;
+    right: 12px;
+    top: 1px;
+    font-size: 20px;
+    margin-left:-20px;
+    z-index: 99999999;
+    color: #4fb7c7;
+}
+.table-condensed{
+    width:100%;
+    width:220px;
+}
+.date-box .control-rest{
+    height:32px;
+    text-align: center;
+    width:100%;
+}
+.date-box .control-rest .form-control{
+    margin-right:10px;
+}
+.date-box .control-rest .rest-ok{
+    height: 30px;
+    width: 60px;
+    line-height: 30px;
+    padding:0px;
+    margin-right:32px;
+    margin-top:22px;
 }

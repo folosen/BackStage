@@ -8,8 +8,8 @@
             this.iDay = this.oDate.getDate();
             this.oCalendar = $('#'+data.id)[0];
             this.aTd = $('#'+data.id+' td');
-            this.oBtnPre = $('#'+data.id+' .am-daymoney-prev')[0];
-            this.oBtnNext = $('#'+data.id+' .am-daymoney-next')[0];
+            this.oBtnPre = $('.am-daymoney-prev')[0];
+            this.oBtnNext = $('.am-daymoney-next')[0];
             this.oTime = document.getElementById('time');
             this.events = data.events;
             this.style = data.style;
@@ -53,8 +53,8 @@
     }
     //初始化
     daymoney.prototype.init = function() {
-            var oBtnPre = this.oBtnPre;
-            var oBtnNext = this.oBtnNext;
+            var oBtnPre = $('.am-daymoney-prev')[0];
+            var oBtnNext = $('.am-daymoney-next')[0];
             var events = this.events;
             var load = this.load;
             var click = this.click;
@@ -147,14 +147,14 @@
             y_list.push((m == 1) ? y - 1 : y);
             m_list.push((m == 1) ? 12 : m - 1);
             d_list.push(iPreDays - i);
-            data.push('<span>' + (iPreDays - i) + '</span>')
+            data.push('<span>' + (iPreDays - i) + '</span><span class="daymoney-month-body"></span>')
         }
         //本月数据
         for (var i = 1; i <= iCurDays; i++) {
             y_list.push(y);
             m_list.push(m);
             d_list.push(i);
-            data.push('<span>' +  i + '</span>');
+            data.push('<span>' +  i + '</span><span class="daymoney-month-body"></span>');
 
         }
         //下月数据
@@ -163,13 +163,13 @@
             y_list.push((m == 12) ? y + 1 : y);
             m_list.push((m == 12) ? 1 : m + 1);
             d_list.push(i);
-            data.push('<span>' +  i + '</span>');
+            data.push('<span>' +  i + '</span><span class="daymoney-month-body"></span>');
         }
         //价格数据
         if(daydatas){
             var priceList=getDate(daydatas);
         }
-        for (var i = 0; i < data.length; i++) {
+        for (var i = 0; i < 35; i++) {
             var this_y = y_list[i];
             var this_m = (m_list[i] > 9) ? m_list[i] : '0' + m_list[i];
             var this_d = (d_list[i] > 9) ? d_list[i] : '0' + d_list[i];
@@ -199,7 +199,7 @@
     }
     $.fn.daymoney = function(data) {
     	//构造静态结构
-        var html = '<table class="am-table am-table-bordered"><caption><i class="am-daymoney-prev"><<上月</i><span class="am-daymoney-year"></span>年<span class="am-daymoney-month"></span>月<i class="am-daymoney-next">下月>></i><div class="btn btn-default rest-btn def-color">修改</div></caption><thead><tr><th>星期一</th><th>星期二</th><th>星期三</th><th>星期四</th><th>星期五</th><th class="red">星期六</th><th class="red">星期日</th></tr></thead><tbody>';
+        var html = '<table class="am-table am-table-bordered"><tbody>';
         for (var i = 0; i < 5; i++) {
             html += '<tr>';
             for (var t = 0; t < 7; t++) {

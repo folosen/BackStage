@@ -6,7 +6,7 @@ $(".table-striped > tbody > tr > td span").click(function(){
 });
 var daydata = '[{"day":"2016-04-10|228"},{"day":"2016-04-11|228"},{"day":"2016-04-12|228"},{"day":"2016-04-13|228"},{"day":"2016-04-14|258"},{"day":"2016-04-15|228"},{"day":"2016-04-16|228"},{"day":"2016-04-17|308"},{"day":"2016-04-19|228"},{"day":"2016-04-20|228"},{"day":"2016-04-22|228"},{"day":"2016-04-23|228"},{"day":"2016-04-24|228"},{"day":"2016-04-25|228"},{"day":"2016-04-26|228"},{"day":"2016-04-27|228"},{"day":"2016-04-28|558"},{"day":"2016-04-29|228"},{"day":"2016-05-01|228"},{"day":"2016-05-02|228"}]';
 var daymoney = $("#calendar").daymoney({
-    'date':'2017-09', //加载时默认显示的月份，不填则显示当前月份
+    'date':'', //加载时默认显示的月份，不填则显示当前月份
     daydata: daydata, 		//日期价格数据
     events: 'click', 		//监听事件，默认为click
     'style': {
@@ -19,7 +19,6 @@ var daymoney = $("#calendar").daymoney({
     },
     'click': function(obj) { 		//点击日期触发
         var html = obj.data('date') + "的价格是:" + obj.data('money');
-        alert(html);
     }
 }).init();
 //使用daymoney对象方法
@@ -33,4 +32,36 @@ $("#set").click(function(){
     daymoney.setmoney('2016-04-21',125,function(data){
         alert('已将'+data.day+'价格设置为'+data.money);	
     });
+});
+//日历插件
+$('.form_datetime').datetimepicker({
+    //language:  'fr',
+    weekStart: 1,
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    forceParse: 0,
+    showMeridian: 1
+});
+$('.form_date').datetimepicker({
+    language:  'fr',
+    weekStart: 1,
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    minView: 2,
+    forceParse: 0
+});
+$('.form_time').datetimepicker({
+    language:  'fr',
+    weekStart: 1,
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 1,
+    minView: 0,
+    maxView: 1,
+    forceParse: 0
 });
