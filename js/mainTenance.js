@@ -2,11 +2,31 @@
 $(".table-striped > tbody > tr > td span").click(function(){
     if($(this).html()=="查看"){
         $(".set-overlay,.price-setbox,.date-box").show();
+        $(".price-setbox .set-overlay-c").hide();
     }
 });
 $(".date-box .close-date-box").click(function(){
     $(".set-overlay,.price-setbox,.date-box").hide();
 })
+$(".date-box .am-table .rest-btn").click(function(){
+    $(".price-setbox .date-box .rest-price").show();
+    $(".price-setbox .set-overlay-c").show();
+});
+$(".price-setbox .date-box .rest-price  .rest-close").click(function(){
+    $(".price-setbox .date-box .rest-price").hide();
+    $(".price-setbox .set-overlay-c").hide();    
+});
+$(".price-setbox .date-box .rest-price  .rest-ok").click(function(){
+    $(".price-setbox .date-box .rest-price").hide();
+    $(".price-setbox .set-overlay-c").hide();
+    dateMath($("#dtp_input1").val(),$("#dtp_input2").val())
+});
+function dateMath(d1,d2){
+    d1=new Date(d1);    
+    d2=new Date(d2);    
+    console.log((d1-d2)/(24*60*60*1000))
+    return (d1-d2)/(24*60*60*1000)
+}
 var daydata = '[{"day":"2017-09-01|228"},{"day":"2017-09-30|228"},{"day":"2017-09-02|228"},{"day":"2017-09-03|228"}]';
 var daymoney = $("#calendar").daymoney({
     'date':'', //加载时默认显示的月份，不填则显示当前月份
@@ -18,7 +38,7 @@ var daymoney = $("#calendar").daymoney({
         today: "am-primary", 		//当天日期样式
     },
     'load': function(obj) { 		//加载完毕时触发
-        console.log('价格日历组件加载完毕');
+        //console.log('价格日历组件加载完毕');
     },
     'click': function(obj) { 		//点击日期触发
         var html = obj.data('date') + "的价格是:" + obj.data('money');
