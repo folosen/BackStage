@@ -5,6 +5,9 @@ $(".table-striped > tbody > tr > td span").click(function(){
         $(".price-setbox .set-overlay-c").hide();
     }
 });
+$(".date-footer .rest-ok").click(function(){
+    $(".set-overlay,.price-setbox,.date-box").hide();
+})
 $(".date-box .close-date-box").click(function(){
     $(".set-overlay,.price-setbox,.date-box").hide();
 })
@@ -16,16 +19,67 @@ $(".price-setbox .date-box .rest-price  .rest-close").click(function(){
     $(".price-setbox .date-box .rest-price").hide();
     $(".price-setbox .set-overlay-c").hide();    
 });
-$(".price-setbox .date-box .rest-price  .rest-ok").click(function(){
-    $(".price-setbox .date-box .rest-price").hide();
-    $(".price-setbox .set-overlay-c").hide();
-    dateMath($("#dtp_input1").val(),$("#dtp_input2").val())
+$(".price-setbox .date-box .rest-price  .rest-ok").click(function(){    
+    var d=dateMath($("#dtp_input1").val(),$("#dtp_input2").val());
+    if(d<0){        
+        var dateArray = getDates(new Date($("#dtp_input1").val()), (new Date($("#dtp_input1").val())).addDays(Math.abs(d)));
+    }else{
+        var dateArray = getDates(new Date($("#dtp_input2").val()), (new Date($("#dtp_input1").val())).addDays(Math.abs(d)));        
+    }
+    for (i = 0; i < Math.abs(d)+1; i ++ ) {
+        //console.log(dateFtt("yyyy-MM-dd",dateArray[i]))
+        daymoney.setmoney(dateFtt("yyyy-MM-dd",dateArray[i]),$("#restPeric").val(),function(data){	
+        });
+    }
 });
+/**时间格式化**/
+Date.prototype.addDays = function(days) {
+    var dat = new Date(this.valueOf())
+    dat.setDate(dat.getDate() + days);
+    return dat;
+}
+
+function getDates(startDate, stopDate) {
+   var dateArray = new Array();
+   var currentDate = startDate;
+   while (currentDate <= stopDate) {
+     dateArray.push(currentDate)
+     currentDate = currentDate.addDays(1);
+   }
+   return dateArray;
+ }
+ /**************************************时间格式化处理************************************/
+function dateFtt(fmt,date)   
+{ //author: meizz   
+  var o = {   
+    "M+" : date.getMonth()+1,                 //月份   
+    "d+" : date.getDate(),                    //日   
+    "h+" : date.getHours(),                   //小时   
+    "m+" : date.getMinutes(),                 //分   
+    "s+" : date.getSeconds(),                 //秒   
+    "q+" : Math.floor((date.getMonth()+3)/3), //季度   
+    "S"  : date.getMilliseconds()             //毫秒   
+  };   
+  if(/(y+)/.test(fmt))   
+    fmt=fmt.replace(RegExp.$1, (date.getFullYear()+"").substr(4 - RegExp.$1.length));   
+  for(var k in o)   
+    if(new RegExp("("+ k +")").test(fmt))   
+  fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));   
+  return fmt;   
+} 
+/** 格式化处理完成 **/
+
 function dateMath(d1,d2){
-    d1=new Date(d1);    
-    d2=new Date(d2);    
-    console.log((d1-d2)/(24*60*60*1000))
-    return (d1-d2)/(24*60*60*1000)
+    if(d1.length>1&&d2.length>1){
+        d1=new Date(d1);    
+        d2=new Date(d2);
+        $(".price-setbox .date-box .rest-price").hide();
+        $(".price-setbox .set-overlay-c").hide();
+        return (d1-d2)/(24*60*60*1000);
+    }else{
+        alert("请输入时间区间")
+    }
+    
 }
 var daydata = '[{"day":"2017-09-01|228"},{"day":"2017-09-30|228"},{"day":"2017-09-02|228"},{"day":"2017-09-03|228"}]';
 var daymoney = $("#calendar").daymoney({
@@ -51,10 +105,8 @@ $("#prev").click(function(){
 $("#next").click(function(){
     daymoney.next();
 });
-$("#set").click(function(){
-    daymoney.setmoney('2016-04-21',125,function(data){
-        alert('已将'+data.day+'价格设置为'+data.money);	
-    });
+$(".price-setbox .date-box .rest-price  .rest-ok").click(function(){
+    
 });
 //日历插件
 $('.form_datetime').datetimepicker({
