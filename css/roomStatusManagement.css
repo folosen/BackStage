@@ -2,6 +2,7 @@
 .blue{
     color:#4fb7c7;
 }
+
 .red{
     color:#ff3333;
 }
@@ -9,9 +10,14 @@
     background-color:#4fb7c7;
 }
 .red-bg{
-    background-color:#ff3333;
+    background-color:#ffa7a7;
 }
-
+.td-blue{
+    background-color:#a6fff6;
+}
+.td-red{
+    background-color:#ffa7a7;
+}
 .form-control{
     width:194px;
 }
@@ -136,7 +142,7 @@ a{
     margin-right:40px;
 }
 #content-box .roomStatus-sel .form-horizontal{
-    height: 66px;
+    height: 65px;
     padding:0px;
     line-height: 66px;
     display: inline-block;
@@ -144,15 +150,19 @@ a{
 #content-box .roomStatus-sel .form-horizontal .control-group{
     height: 66px;
     font-size:16px;
+    margin: 0px;
+    height:32.5px;
+    line-height: 32.5px;
 }
+
 #content-box .roomStatus-sel .form-horizontal .control-group .date-input{
-    height: 66px;
     width: 214px;
     display:inline-block;
 }
 #content-box .roomStatus-sel .control-week{
     margin-left: -80px;
     height:30px;
+    width:32px;
 }
 #content-box .roomStatus-sel .tips-right{
     float:right;
@@ -160,11 +170,17 @@ a{
     line-height: 66px;
     vertical-align: middle;
 }
+#content-box .roomStatus-sel .tips-right p{
+    margin:0px;
+}
 #content-box .roomStatus-sel .tips-right span{
     display: inline-block;
     width:46px;
     height:30px;
     border-radius: 5px;
+    margin-right:10px;
+    margin-left:24px;
+    vertical-align: middle;
 }
 .add-on{
     margin-left: 16px;    
@@ -183,9 +199,95 @@ a{
     margin-bottom: 2px;
     margin-right:10px;
 }
+table{
+    border-collapse:collapse;
+}
+
+th[class=first]:before{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height:136px;/*这里需要自己调整，根据td的宽度和高度*/
+    top:0;
+    left:0;
+    background-color: #ddd;
+    display: block;
+    transform: rotate(-72deg);/*这里需要自己调整，根据线的位置*/
+    transform-origin: top;
+}
+th[class=first] > b{
+    position: absolute;
+    top:-8px;
+    right:14px;
+    height:12px;
+    font-weight: normal;
+    width:auto;
+}
+th[class=first] > em{
+    position: absolute;
+    bottom:20px;
+    left:8px;
+    height:12px;
+    display: inline-block;
+    width:auto;
+}
+.table > thead > tr > th{
+    font-weight: normal;
+    border-bottom: none;
+}
 label{
     font-weight: normal;
 }
+#content-box .sel-box{
+    width:1144px;
+    height:496px;
+    margin:auto;
+}
+#content-box .sel-box tr > th:first-child{
+    position: relative;
+    width:130px;
+    height:44
+}
+#content-box .sel-box .btn-link{
+    padding:0px;
+    color:#4fb7c7;
+}
+#content-box .sel-box .table > tbody > tr > td{
+    height:30px;
+    line-height: 43px;
+}
+td,th{
+    position: relative;
+    font-size: 12px;
+}
+.set-overlay{
+    position: fixed;
+    display: none;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    box-sizing: content-box;
+    z-index: 99999;
+    background-color: #000;
+    opacity: 0.5;
+    background: -moz-radial-gradient(center,ellipse cover,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
+    background: -webkit-gradient(radial,center center,0px,center center,100%,color-stop(0%,rgba(0,0,0,0.4)),color-stop(100%,rgba(0,0,0,0.9)));
+    background: -webkit-radial-gradient(center,ellipse cover,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
+    background: -o-radial-gradient(center,ellipse cover,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
+    background: -ms-radial-gradient(center,ellipse cover,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
+    background: radial-gradient(center,ellipse cover,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
+    filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#66000000',endColorstr='#e6000000',GradientType=1)";
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+/** footer **/
 .footer{
     width:1120px;
     height:45px;
@@ -211,4 +313,156 @@ label{
     border:1px solid #dddddd;
     font-size:14px;
     line-height: 14px;
+}
+#content-box .sel-box .red{
+    color:#ff3333;
+}
+
+/*  */
+.date-box .date-footer{
+    margin: auto;
+    margin-top:23px;
+    width: 700px;
+}
+.date-box .tabel-body-box{
+    margin: auto;
+    width: 700px;
+    border: 1px solid #ddd;
+    border-top:none;
+    padding-bottom: 16px;
+}
+.date-box .rest-ok{
+    float:right;
+    color:#fff;
+    background-color: #4fb7c7;
+}
+.date-box .rest-price{
+    position: absolute;
+    z-index: 999999999;
+    display: none;
+    top:50%;
+    left:50%;
+    width:490px;
+    height:362px;
+    margin-left:-245px;
+    margin-top:-163px;
+    background-color: #fff;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 2px 14px 1px #888888;
+}
+.date-box .rest-only{
+    width:360px;
+    height:258px;
+    margin-left:-180px;
+    margin-top:-129px;
+}
+.date-box .form-control{
+  width:142px;
+  height:30px;  
+}
+.date-box h4{
+    border-radius: 5px 5px 0 0;
+    background-color: #4fb7c7;
+    height:42px;
+    line-height: 42px;
+    font-size: 15px;
+    color:#fff;
+    padding-left:16px;
+    margin: 0px;
+}
+.date-box h4 i{
+    float:right;
+    margin-top:13px;
+    margin-right:12px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.date-box .control-group{
+    height:65px;
+    text-align: center;
+    width:100%;
+}
+.date-box .control-group>div{
+    display:inline-block;
+    height:30px;
+    margin-top:23px;
+    position: relative;
+    margin-right:10px;
+    font-size: 16px;
+}
+
+.date-box .control-group div input{
+    height:30px;
+}
+.date-box .control-group div span{
+    position: absolute;
+    right: 15px;
+    top: 1px;
+    font-size: 20px;
+    margin-left:-20px;
+    z-index: 9;
+    color: #4fb7c7;
+}
+.table-condensed{
+    width:100%;
+    width:220px;
+}
+#content-box .date-box .radio-info{
+    display:inline-block;
+    height:30px;
+    margin:0px;
+    font-size: 16px;
+}
+.date-box .control-rest{
+    height:32px;
+    text-align: center;
+    width:100%;
+}
+.date-box .control-rest .form-control{
+    margin-right:10px;
+}
+.date-box .control-rest .rest-ok,.date-box .control-rest .rest-no{
+    height: 30px;
+    width: 60px;
+    line-height: 30px;
+    padding:0px;
+    margin-right:10px;
+    margin-top:22px;
+}
+.date-box .control-rest .rest-no{
+    margin-right:32px;
+}
+.date-box .control-group p{
+    margin: 0px;
+    height:32.5px;
+    line-height: 32.5px;
+    text-align: left;
+    margin-left:20px;
+}
+#content-box .date-box .close-open i{
+    font-size:20px;
+    color:#999999;
+    margin: 0px 9px;
+    cursor: pointer;
+}
+#content-box .date-box .close-open em{
+    padding:5px 10px;
+    border:1px solid #ddd;
+    border-radius: 5px;
+    color:#4fb7c7;
+}
+#content-box .date-box .close-open{
+    margin:0px;
+    width:100%;
+    height: 32.5px;
+    padding-top:3px;
+    margin-left:-20px;
+    text-align: left;
+    padding-left:74px;
+}
+.radio{
+    padding-left: 30px;
+}
+.radio label::after,.radio label::before{
+    margin-top:2px;
 }

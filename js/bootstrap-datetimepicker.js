@@ -511,6 +511,9 @@
       }
       if (this.linkField) {
         $('#' + this.linkField).val(this.getFormattedDate(this.linkFormat));
+        if(this.linkField=="sel-date"){
+          $(".roomStatus-sel .control-week").html(this.getWeekday(this.getFormattedDate(this.linkFormat)));
+        }
       }
     },
 
@@ -549,7 +552,11 @@
       this.update();
       this.updateNavArrows();
     },
-
+    getWeekday:function (sDate){
+        var dt = new Date(sDate);
+        var a = ['周日', '周一','周二','周三','周四','周五','周六'];
+        return a[dt.getDay()];
+    },
     setTitle: function (selector, value) {
       return this.picker.find(selector)
         .find('th:eq(1)')
