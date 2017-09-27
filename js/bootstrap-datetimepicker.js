@@ -34,7 +34,6 @@
       factory(jQuery);
 
 }(function($, undefined){
-
   // Add ECMA262-5 Array methods if not supported natively (IE8)
   if (!('indexOf' in Array.prototype)) {
     Array.prototype.indexOf = function (find, i) {
@@ -513,6 +512,8 @@
         $('#' + this.linkField).val(this.getFormattedDate(this.linkFormat));
         if(this.linkField=="sel-date"){
           $(".roomStatus-sel .control-week").html(this.getWeekday(this.getFormattedDate(this.linkFormat)));
+          $('#start-input').val(this.getFormattedDate(this.linkFormat));
+          $('#end-input').val(dateFtt("yyyy-MM-dd",new Date(this.getFormattedDate(this.linkFormat)).addDays(14)));
         }
       }
     },
