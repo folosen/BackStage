@@ -5,6 +5,13 @@
 .red{
     color:#ff3333;
 }
+.blue-bg{
+    background-color:#4fb7c7;
+}
+.red-bg{
+    background-color:#ff3333;
+}
+
 .form-control{
     width:194px;
 }
@@ -125,10 +132,14 @@ a{
 #content-box .roomStatus-sel{
     height: 66px;
     margin-left:40px;
+    line-height: 66px;
+    margin-right:40px;
 }
 #content-box .roomStatus-sel .form-horizontal{
     height: 66px;
+    padding:0px;
     line-height: 66px;
+    display: inline-block;
 }
 #content-box .roomStatus-sel .form-horizontal .control-group{
     height: 66px;
@@ -136,13 +147,41 @@ a{
 }
 #content-box .roomStatus-sel .form-horizontal .control-group .date-input{
     height: 66px;
+    width: 214px;
     display:inline-block;
 }
 #content-box .roomStatus-sel .control-week{
-    margin-left: -70px;
+    margin-left: -80px;
+    height:30px;
+}
+#content-box .roomStatus-sel .tips-right{
+    float:right;
+    height:66px;
+    line-height: 66px;
+    vertical-align: middle;
+}
+#content-box .roomStatus-sel .tips-right span{
+    display: inline-block;
+    width:46px;
+    height:30px;
+    border-radius: 5px;
 }
 .add-on{
-    margin-left: 10px;
+    margin-left: 16px;    
+}
+.fa-calendar{
+    color:#4fb7c7;
+}
+#content-box .roomStatus-sel .btn-date{
+    width:114px;
+    height:30px;
+    color:#fff;
+    background-color: #4fb7c7;
+    font-weight: bold;
+    line-height: 30px;
+    padding:0px;
+    margin-bottom: 2px;
+    margin-right:10px;
 }
 label{
     font-weight: normal;
